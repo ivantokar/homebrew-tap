@@ -5,12 +5,12 @@ class Hokusai < Formula
   sha256 "c71065736beaa16839eeadc3161788ca173a6402b7b8fb898d3478f319450bbc"
   license "MIT"
 
-  depends_on "swift" => :build
   depends_on "pkg-config" => :build
+  depends_on "swift" => :build
   depends_on "vips"
 
   def install
-    system "swift", "build", "-c", "release", "--product", "hokusai"
+    system "swift", "build", "-c", "release", "--product", "hokusai", "--disable-sandbox"
     bin.install ".build/release/hokusai"
   end
 
