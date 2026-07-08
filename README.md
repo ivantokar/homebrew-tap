@@ -10,16 +10,24 @@ brew install hokusai
 hokusai --help
 ```
 
+```bash
+brew tap ivantokar/homebrew-tap
+brew install mage
+mage --help
+```
+
 ## Upgrade
 
 ```bash
 brew update
 brew upgrade hokusai
+brew upgrade mage
 ```
 
 ## Available Formulae
 
 - `hokusai`
+- `mage`
 
 ## Maintainer Notes
 
