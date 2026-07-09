@@ -5,6 +5,11 @@ class Mage < Formula
   sha256 "00a2c1d1b483be871b30179f2ff684c1dc0d77c2fac69147ded914e5ad14ef6f"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/ivantokar/mage/releases/download/v0.1.0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "013599249b93e045f06647c9ed9cb9cbfd955392040b9e9ea2262d8f7483bb3c"
+  end
+
   depends_on arch: :arm64
 
   def install
