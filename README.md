@@ -33,6 +33,8 @@ hash -r
 mage --help
 ```
 
+Mage is distributed from this tap as a prebuilt Apple Silicon bottle. On macOS beta releases, this avoids local Swift builds that can fail when Homebrew requires a newer Xcode or Command Line Tools version.
+
 ## Upgrade
 
 ```bash
@@ -50,6 +52,8 @@ brew upgrade ivantokar/tap/mage
 
 - Formula files live in `Formula/*.rb`.
 - For each new CLI release:
-  1. Update `url` to the new tag tarball.
-  2. Update `sha256`.
-  3. Commit and push to `main`.
+  1. Upload the source or prebuilt archive to the GitHub release.
+  2. Update the formula `url` and `sha256`.
+  3. Upload the Homebrew bottle archive for supported macOS targets.
+  4. Update the formula `bottle do` block.
+  5. Commit and push to `main`.
