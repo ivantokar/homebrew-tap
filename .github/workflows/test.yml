@@ -17,18 +17,15 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Audit
-        run: |
-          brew tap-new local/check --no-git
-          cp Formula/hokusai.rb "$(brew --repository local/check)/Formula/"
-          brew audit --strict local/check/hokusai
-
       - name: Install the way a user does
         run: |
           # Taps from the repository under test, not from GitHub's default branch.
           mkdir -p "$(brew --repository)/Library/Taps/ivantokar"
           ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/ivantokar/homebrew-tap"
           brew install ivantokar/tap/hokusai
+
+      - name: Audit
+        run: brew audit --strict ivantokar/tap/hokusai
 
       - name: Test
         run: |
