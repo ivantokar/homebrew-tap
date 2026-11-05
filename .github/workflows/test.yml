@@ -10,7 +10,7 @@ on:
 
 jobs:
   hokusai:
-    runs-on: macos-26
+    runs-on: macos-15
     env:
       HOMEBREW_NO_AUTO_UPDATE: "1"
       HOMEBREW_NO_ENV_HINTS: "1"
