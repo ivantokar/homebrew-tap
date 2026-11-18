@@ -2,7 +2,22 @@
 
 Homebrew tap for ivantokar CLI formulae.
 
-## Install
+Homebrew 6 asks you to trust third-party taps. Trust this one once, for all its formulae:
+
+```bash
+brew trust ivantokar/tap
+```
+
+## Formulae
+
+| Formula | Status | Source |
+| --- | --- | --- |
+| [`hokusai`](#hokusai) | Stable | [ivantokar/hokusai](https://github.com/ivantokar/hokusai) |
+| [`mage`](#mage) | Early development | [ivantokar/mage](https://github.com/ivantokar/mage) |
+
+## Hokusai
+
+High-performance image processing for Swift, powered by libvips, with a first-party CLI.
 
 ```bash
 brew install ivantokar/tap/hokusai
@@ -11,11 +26,18 @@ hokusai --version
 
 `hokusai` is a prebuilt Apple Silicon binary (macOS), so nothing is compiled. It needs the `vips` and `cairo` formulae, which Homebrew installs with it.
 
-Homebrew 6 asks you to trust third-party taps. Trust this one once, for all its formulae:
+Upgrade:
 
 ```bash
-brew trust ivantokar/tap
+brew update
+brew upgrade ivantokar/tap/hokusai
 ```
+
+## Mage
+
+Project scaffolding and architecture tooling for server-side Swift.
+
+> ⚠️ Mage is in early development. APIs and behavior will change, and it is not ready for production use.
 
 ```bash
 brew install ivantokar/tap/mage
@@ -41,18 +63,12 @@ mage --help
 
 Mage is distributed from this tap as a prebuilt Apple Silicon bottle. On macOS beta releases, this avoids local Swift builds that can fail when Homebrew requires a newer Xcode or Command Line Tools version.
 
-## Upgrade
+Upgrade:
 
 ```bash
 brew update
-brew upgrade ivantokar/tap/hokusai
 brew upgrade ivantokar/tap/mage
 ```
-
-## Available Formulae
-
-- `hokusai`
-- `mage`
 
 ## Maintainer Notes
 
